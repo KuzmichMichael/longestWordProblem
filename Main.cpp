@@ -20,15 +20,14 @@ int main() {
 	getline(cin, inputString);
 
 	size_t stringIterator = 0;
-	while (stringIterator < inputString.length()) {
-		while (isalpha(inputString[stringIterator])) {
+	for (stringIterator; stringIterator < inputString.length(); stringIterator++) {
+		while (isalpha(inputString[stringIterator]) || isdigit(inputString[stringIterator])) {
 			tempWord += inputString[stringIterator++];
 		}
 		
 		if (tempWord.length() > longestWord.length()) {
 			longestWord = tempWord;
 		}
-		cout << tempWord << " " << longestWord << endl;
 		tempWord = "";
 		stringIterator++;
 	}
